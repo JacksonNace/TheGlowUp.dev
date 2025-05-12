@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap');
+
+.account-section {
+  min-height: 100vh;
+  background-color: #9989EB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.account-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 320px;
+}
+
+.account-avatar {
+  width: 90px;
+  height: 90px;
+  background: linear-gradient(135deg, #9989EB, #6C5DD3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  font-family: 'Cal Sans', sans-serif;
+}
+
+.account-name {
+  font-family: 'Cal Sans', sans-serif;
+  font-size: 2rem;
+  margin: 0.5rem 0 0.25rem 0;
+  color: #171C30;
+}
+
+.account-email {
+  color: #6C5DD3;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.account-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.account-btn {
+  background: #9989EB;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.account-btn.logout {
+  background: #E94F37;
+}
+
+.account-btn:hover {
+  background: #6C5DD3;
+}
+
+.account-btn.logout:hover {
+  background: #c0392b;
+}
+
+@media (max-width: 480px) {
+  .account-card {
+    min-width: 90vw;
+    padding: 1.5rem 0.5rem;
+  }
+  .account-avatar {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+  .account-name {
+    font-size: 1.25rem;
+  }
+} 
