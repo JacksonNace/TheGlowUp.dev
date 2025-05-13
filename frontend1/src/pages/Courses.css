@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap');
+
+.courses-section {
+  min-height: 100vh;
+  background-color: #f5f7ff;
+  padding: 2rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.courses-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.courses-title {
+  color: #171C30;
+  font-family: 'Cal Sans', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.course-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+}
+
+.course-header {
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 1rem;
+}
+
+.course-header h2 {
+  color: #171C30;
+  font-family: 'Cal Sans', sans-serif;
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.course-subheader {
+  color: #6C5DD3;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.4;
+}
+
+.course-meta {
+  display: flex;
+  gap: 1rem;
+  color: #6C5DD3;
+  font-size: 0.9rem;
+}
+
+.course-description {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.course-progress {
+  margin-bottom: 1.5rem;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #171C30;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #9989EB, #6C5DD3);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.continue-btn {
+  width: 100%;
+  background: #9989EB;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.continue-btn:hover {
+  background: #6C5DD3;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .courses-section {
+    padding: 1rem;
+  }
+
+  .courses-title {
+    font-size: 2rem;
+  }
+
+  .courses-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .courses-title {
+    font-size: 1.75rem;
+  }
+
+  .course-card {
+    padding: 1.25rem;
+  }
+
+  .course-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .course-subheader {
+    font-size: 1rem;
+  }
+}

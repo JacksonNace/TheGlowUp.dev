@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap');
+
+.about-section {
+  min-height: 100vh;
+  background-color: #f5f7ff;
+  padding: 4rem 2rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.about-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.about-header h1 {
+  color: #171C30;
+  font-family: 'Cal Sans', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.intro-text {
+  color: #6C5DD3;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.team-members {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.member-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-5px);
+}
+
+.member-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.wave {
+  font-size: 2rem;
+}
+
+.member-header h2 {
+  color: #171C30;
+  font-family: 'Cal Sans', sans-serif;
+  font-size: 1.75rem;
+  margin: 0;
+}
+
+.member-content p {
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.member-content p:last-child {
+  margin-bottom: 0;
+}
+
+.collaboration-section {
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.collaboration-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.handshake {
+  font-size: 2rem;
+}
+
+.collaboration-header h2 {
+  color: #171C30;
+  font-family: 'Cal Sans', sans-serif;
+  font-size: 1.75rem;
+  margin: 0;
+}
+
+.collaboration-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.alyssa-quote,
+.jackson-quote,
+.collaboration-quote {
+  color: #666;
+  line-height: 1.7;
+  font-size: 1.1rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: #f8f9ff;
+}
+
+.alyssa-quote {
+  border-left: 4px solid #9989EB;
+}
+
+.jackson-quote {
+  border-left: 4px solid #6C5DD3;
+}
+
+.collaboration-quote {
+  border-left: 4px solid #453F9D;
+  font-weight: 500;
+}
+
+.closing-section {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.closing-section p {
+  color: #6C5DD3;
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .about-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .intro-text {
+    font-size: 1.1rem;
+  }
+
+  .member-card {
+    padding: 1.5rem;
+  }
+
+  .member-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .collaboration-section {
+    padding: 1.5rem;
+  }
+
+  .collaboration-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .alyssa-quote,
+  .jackson-quote,
+  .collaboration-quote {
+    padding: 1.25rem;
+    font-size: 1rem;
+  }
+
+  .closing-section p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 2rem 1rem;
+  }
+
+  .about-header h1 {
+    font-size: 2rem;
+  }
+
+  .wave, .handshake {
+    font-size: 1.5rem;
+  }
+
+  .member-header h2,
+  .collaboration-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .alyssa-quote,
+  .jackson-quote,
+  .collaboration-quote {
+    padding: 1rem;
+  }
+}

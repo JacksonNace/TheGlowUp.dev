@@ -1,33 +1,19 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import './Navbar.css'
+import './Navbar.css';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-
   return (
     <nav className="navbar">
-      <div className="navbar-container">
-        <Link to="/" className="navbar-logo">
-          GlowUp.dev
-        </Link>
-        <button 
-          className="menu-toggle"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-          <Link to="/" className="nav-link" onClick={() => setIsMenuOpen(false)}>Home</Link>
-          <Link to="/profile" className="nav-link" onClick={() => setIsMenuOpen(false)}>Profile</Link>
-          <Link to="/tasks" className="nav-link" onClick={() => setIsMenuOpen(false)}>Tasks</Link>
-        </div>
-      </div>
+      <Link to="/" className="navbar-logo">The Glow Up</Link>
+      <ul className="navbar-links">
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/Courses">Courses</Link></li>
+        <li><Link to="/About">About Us</Link></li>
+        <li><Link to="/Account">Account</Link></li>
+        <li><Link to="/signup">Sign Up</Link></li>
+      </ul>
     </nav>
-  )
+  );
 }
 
-export default Navbar 
+export default Navbar; 

@@ -4,58 +4,85 @@
 .qna-container {
   display: flex;
   background-color: #9989EB;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
-  padding: 2rem;
+  padding: 2rem 1rem;
   gap: 2rem;
-  max-width: 60%;
-  margin: 0 auto; /* This centers the container horizontally */
+  width: 100%;
+  box-sizing: border-box;
 }
 
-  
-  .qna-image img {
-    max-width: 300px;
-    height: auto;
-  }
-  
-  .qna-content {
-    flex: 1;
-    
-    
-  }
-  
-  .qna-content h2 {
-    font-family: "Cal Sans", sans-serif;
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    letter-spacing: 0.1rem;
-  }
-  
-  .qna-block {
-    border-bottom: 1px solid #ccc;
-    padding: 1rem 0;
-    font-family: 'Montserrat', sans-serif;
+.qna-image {
+  flex-shrink: 0;
+  padding-top: 1rem;
+}
 
-  }
-  
-  .qna-question {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-  }
-  
-  .qna-question h3 {
-    margin: 0;
-    font-weight: bold;
-  }
-  
-  .qna-question span {
-    font-size: 1.5rem;
-  }
-  
-  .qna-answer {
-    margin-top: 0.5rem;
-    color: #555;
-  }
+.qna-image img {
+  max-width: 450px;
+  height: auto;
+}
+
+.qna-content {
+  flex: 1;
+  max-width: 60%;
+  box-sizing: border-box;
+}
+
+.qna-content h2 {
+  color: #ffffff;
+  font-family: "Cal Sans", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.1rem;
+  text-shadow: 2px 2px 0 #453F9D;
+}
+
+.qna-block {
+  border-bottom: 1px solid #453F9D;
+  padding: 0.5rem 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.qna-question {
+  display: flex;
+  color: #453F9D;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.qna-question:hover {
+  color: #ffffff;
+}
+
+.qna-question h3 {
+  margin: 0;
+  font-weight: bold;
+}
+
+.qna-question span {
+  font-size: 2rem;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.qna-answer {
+  margin-top: 0.5rem;
+  color: rgb(255, 255, 255);
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.qna-block.active .qna-answer {
+  opacity: 1;
+  max-height: 500px;
+  margin-top: 0.75rem;
+}
+
+.qna-block.active .qna-question {
+  color: #ffffff;
+}
   
