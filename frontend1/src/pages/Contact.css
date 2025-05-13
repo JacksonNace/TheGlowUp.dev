@@ -1,5 +1,5 @@
 .contact-section {
-  padding: 5rem 2rem;
+  padding: 3rem 2rem;
   background-color: #9989EB;
   color: white;
 }
@@ -7,24 +7,25 @@
 .contact-container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .contact-content {
   display: flex;
-  gap: 4rem;
+  gap: 8rem;
   align-items: center;
 }
 
 .contact-image {
-  flex: 1;
+  flex: 0.6;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .contact-image h2 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 600;
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -33,41 +34,43 @@
 
 .contact-image img {
   width: 100%;
+  max-width: 400px;
   height: auto;
   border-radius: 20px;
 }
 
 .contact-form-container {
-  flex: 1;
-  padding: 3rem;
+  flex: 1.4;
+  padding: 2rem;
   background: white;
   border-radius: 20px;
   box-shadow: -10px 10px 0 #453F9D;
+  margin: 0 2rem;
 }
 
 .contact-form-container h2 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: #333;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   font-family: 'Poppins', sans-serif;
 }
 
 .contact-subtitle {
   color: #666;
-  margin-bottom: 2rem;
-  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
   font-family: 'Poppins', sans-serif;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .form-group {
   position: relative;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .form-group label {
@@ -92,7 +95,7 @@
 }
 
 .form-group textarea {
-  min-height: 150px;
+  min-height: 100px;
   resize: vertical;
 }
 
@@ -106,7 +109,7 @@
 .submit-button {
   background-color: #9989EB;
   color: white;
-  padding: 1rem 2rem;
+  padding: 0.8rem 2rem;
   border: none;
   border-radius: 10px;
   font-size: 1.1rem;
@@ -128,26 +131,34 @@
 @media (max-width: 1024px) {
   .contact-content {
     flex-direction: column;
-    gap: 2rem;
+    gap: 4rem;
   }
 
   .contact-image {
-    max-width: 500px;
+    max-width: 400px;
     margin: 0 auto;
   }
 
   .contact-form-container {
     width: 100%;
+    max-width: 500px;
+    margin: 0 2rem;
   }
 }
 
 @media (max-width: 768px) {
   .contact-section {
-    padding: 3rem 1rem;
+    padding: 2rem 1rem;
+  }
+
+  .contact-container {
+    padding: 0;
   }
 
   .contact-form-container {
-    padding: 2rem;
+    padding: 1.5rem;
+    max-width: 90%;
+    margin: 0 auto;
   }
 
   .contact-form-container h2,
@@ -156,6 +167,18 @@
   }
 
   .contact-subtitle {
-    font-size: 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-container {
+    padding: 0;
+  }
+
+  .contact-form-container {
+    padding: 1.25rem;
+    max-width: 85%;
+    margin: 0 auto;
   }
 }
