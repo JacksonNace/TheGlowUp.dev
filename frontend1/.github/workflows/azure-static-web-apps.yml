@@ -26,8 +26,8 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           app_location: "/frontend1"
           api_location: ""
-          output_location: "/frontend1/dist"
-          app_build_command: "npm run build"
+          output_location: "/frontend1/build"
+          app_build_command: "npm run build:azure"
           api_build_command: ""
           node_version: "20.11.1"
           skip_app_build: false

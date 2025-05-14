@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && npm run copy-dist",
+    "build": "vite build",
+    "build:azure": "vite build",
     "copy-dist": "node scripts/copy-dist.js",
     "lint": "eslint .",
     "preview": "vite preview"
