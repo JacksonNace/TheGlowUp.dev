@@ -59,7 +59,7 @@ const QnA = () => {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5 }}
         >
-          <h2>Frequently Asked Questions</h2>
+        <h2>Frequently Asked Questions</h2>
         </motion.div>
         <motion.div 
           className="qna-image-mobile"
@@ -75,19 +75,19 @@ const QnA = () => {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
-          {faqs.map((faq, index) => (
+        {faqs.map((faq, index) => (
             <motion.div 
               key={index} 
               className={`qna-block ${openIndex === index ? 'active' : ''}`}
               variants={itemVariants}
             >
-              <div className="qna-question" onClick={() => toggleIndex(index)}>
-                <h3>{faq.question}</h3>
-                <span>{openIndex === index ? '×' : '+'}</span>
-              </div>
-              <p className="qna-answer">{faq.answer}</p>
+            <div className="qna-question" onClick={() => toggleIndex(index)}>
+              <h3>{faq.question}</h3>
+              <span>{openIndex === index ? '×' : '+'}</span>
+            </div>
+            <p className="qna-answer">{faq.answer}</p>
             </motion.div>
-          ))}
+        ))}
         </motion.div>
       </div>
     </section>

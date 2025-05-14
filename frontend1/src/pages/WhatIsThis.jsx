@@ -37,7 +37,7 @@ const WhatIsThis = () => {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5 }}
         >
-          <h1>What is this?</h1>
+        <h1>What is this?</h1>
         </motion.div>
         <motion.div
           variants={containerVariants}
@@ -59,7 +59,7 @@ const WhatIsThis = () => {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5, delay: 0.8 }}
         >
-          <img src={aboutImage} alt="About us illustration" className="about-image" />
+        <img src={aboutImage} alt="About us illustration" className="about-image" />
         </motion.div>
       </div>
     </section>
