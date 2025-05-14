@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './Contact.css';
 import contactImage from '/contact.png';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +11,9 @@ const Contact = () => {
     address: '',
     message: ''
   });
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,19 +29,65 @@ const Contact = () => {
     console.log(formData);
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5
+      }
+    }
+  };
+
   return (
-    <section className="contact-section" id="contact">
+    <section className="contact-section" id="contact" ref={ref}>
       <div className="contact-container">
         <div className="contact-content">
-          <div className="contact-image">
+          <motion.div 
+            className="contact-image"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.5 }}
+          >
             <h2>Let's Talk!</h2>
-            <img src={contactImage} alt="Contact Us" />
-          </div>
-          <div className="contact-form-container">
-            <h2>Contact Us</h2>
-            <p className="contact-subtitle">You can expect a response within 7 days on Jupiter.</p>
-            <form onSubmit={handleSubmit} className="contact-form">
-              <div className="form-group">
+            <motion.img 
+              src={contactImage} 
+              alt="Contact Us"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            />
+          </motion.div>
+          <motion.div 
+            className="contact-form-container"
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+          >
+            <motion.h2 variants={itemVariants}>Contact Us</motion.h2>
+            <motion.p 
+              className="contact-subtitle"
+              variants={itemVariants}
+            >
+              You can expect a response within 7 days on Jupiter.
+            </motion.p>
+            <motion.form 
+              onSubmit={handleSubmit} 
+              className="contact-form"
+              variants={containerVariants}
+            >
+              <motion.div className="form-group" variants={itemVariants}>
                 <label htmlFor="name">Your Name</label>
                 <input
                   type="text"
@@ -46,8 +97,8 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                 />
-              </div>
-              <div className="form-group">
+              </motion.div>
+              <motion.div className="form-group" variants={itemVariants}>
                 <label htmlFor="email">Your Email</label>
                 <input
                   type="email"
@@ -57,8 +108,8 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                 />
-              </div>
-              <div className="form-group">
+              </motion.div>
+              <motion.div className="form-group" variants={itemVariants}>
                 <label htmlFor="message">Your Message</label>
                 <textarea
                   id="message"
@@ -67,12 +118,16 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                 />
-              </div>
-              <button type="submit" className="submit-button">
+              </motion.div>
+              <motion.button 
+                type="submit" 
+                className="submit-button"
+                variants={itemVariants}
+              >
                 Let's Talk!
-              </button>
-            </form>
-          </div>
+              </motion.button>
+            </motion.form>
+          </motion.div>
         </div>
       </div>
     </section>

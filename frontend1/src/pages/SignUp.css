@@ -49,7 +49,7 @@
 .signup-content {
   width: 80%;
   background: white;
-  padding: 3rem;
+  padding: 2rem;
   border-radius: 20px;
   box-shadow: -10px 10px 0 #453F9D;
 }
@@ -58,8 +58,9 @@
   color: #453F9D;
   font-family: "Cal Sans", sans-serif;
   font-size: 3rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
   text-align: center;
+  line-height: 1;
 }
 
 .signup-form {
@@ -138,7 +139,7 @@
   }
 
   .signup-content {
-    padding: 2rem;
+    padding: 1.5rem;
     margin: 1rem;
   }
 
@@ -153,21 +154,25 @@
 
 .signup-subtitle {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  line-height: 1;
 }
 
 .signup-subtitle p:first-child {
   color: #453F9D;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;
   font-family: 'Poppins', sans-serif;
+  line-height: 1;
 }
 
 .signup-subtitle p:last-child {
   color: #666;
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-family: 'Poppins', sans-serif;
+  line-height: 1;
+  margin-top: 1rem;
 }
 
 .login-link {

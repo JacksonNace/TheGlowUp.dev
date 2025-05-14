@@ -13,19 +13,20 @@
   box-sizing: border-box; /* Ensures padding doesn't affect layout */
 }
 
-.Sum h1 {
+.Sum > div:first-child {
   color: #ffffff;
   font-family: "Cal Sans", sans-serif;
   font-weight: 400;
   font-style: normal;
-    font-size: 4rem;
-  margin-bottom: 0.5rem; /* Reduced space between h1 and p */
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 0 #453F9D;
 }
 
 .Sum p {
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem;
+  font-size: 2rem;
   max-width: 60%;
   text-align: center;
   margin-top: 0;
@@ -39,13 +40,26 @@
   border-radius: 1rem;
 }
 
+/* iPad and smaller desktop screens */
+@media (max-width: 1024px) {
+  .about-image {
+    max-width: 50%;
+    margin-top: 2.5rem;
+  }
+}
 
 @media (max-width: 768px) {
-  .Sum h1 {
+  .Sum > div:first-child {
     font-size: 2.25rem;
   }
 
   .Sum p {
     font-size: 1.25rem;
+    max-width: 90%; /* Make text wider on mobile */
+  }
+
+  .about-image {
+    max-width: 80%; /* Make image much larger on mobile */
+    margin-top: 3rem; /* Add more space above the image */
   }
 }

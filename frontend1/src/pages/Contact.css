@@ -156,18 +156,43 @@
   }
 
   .contact-form-container {
-    padding: 1.5rem;
+    padding: 1.25rem;
     max-width: 90%;
     margin: 0 auto;
   }
 
   .contact-form-container h2,
   .contact-image h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .contact-subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .form-group {
+    margin-bottom: 0.75rem;
+  }
+
+  .form-group label {
+    font-size: 0.85rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
     font-size: 0.9rem;
+    padding: 0.2rem 0;
+  }
+
+  .form-group textarea {
+    min-height: 80px;
+  }
+
+  .submit-button {
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
   }
 }
 
@@ -177,8 +202,35 @@
   }
 
   .contact-form-container {
-    padding: 1.25rem;
+    padding: 1rem;
     max-width: 85%;
     margin: 0 auto;
+  }
+
+  .contact-form-container h2,
+  .contact-image h2 {
+    font-size: 1.6rem;
+  }
+
+  .contact-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .form-group {
+    margin-bottom: 0.6rem;
+  }
+
+  .form-group label {
+    font-size: 0.8rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.85rem;
+  }
+
+  .submit-button {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.9rem;
   }
 }

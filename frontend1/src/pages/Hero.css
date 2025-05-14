@@ -13,31 +13,49 @@
   color: white;
   padding: 2rem; /* Adds space inside the hero section */
   box-sizing: border-box; /* Ensures padding doesn't affect layout */
+  overflow: visible;
 }
 
-.hero h1 {
+.hero > div:first-child {
   font-family: "Cal Sans", sans-serif;
   font-weight: 400;
   font-style: normal;
-    font-size: 7rem;
-  margin-bottom: 0.5rem; /* Reduced space between h1 and p */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  font-size: 7rem;
+  margin-bottom: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6),
+               0 0 20px rgba(255, 255, 255, 0.5),
+               0 0 40px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  cursor: pointer;
+  line-height: 1;
+  padding: 40px;
+  overflow: visible;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
 }
 
-.hero p {
-  font-family: 'Montserrat', sans-serif; /* Apply Cal Sans font */
+.hero > div:first-child:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.7))
+          drop-shadow(0 0 60px rgba(255, 255, 255, 0.5))
+          drop-shadow(0 0 80px rgba(255, 255, 255, 0.3));
+}
+
+.hero > div:last-child {
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.5rem;
   max-width: 600px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-  margin-top: 0; /* Ensures no extra space above the p tag */
+  margin-top: 0.5rem;
 }
 
 @media (max-width: 768px) {
-  .hero h1 {
+  .hero > div:first-child {
     font-size: 2.25rem;
+    padding: 20px;
   }
 
-  .hero p {
+  .hero > div:last-child {
     font-size: 1.25rem;
   }
 }

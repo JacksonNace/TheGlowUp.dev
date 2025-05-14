@@ -27,7 +27,6 @@ const SignUp = () => {
     <section className="signup-section">
       <div className="signup-container">
         <div className="signup-content">
-          <h2>The Glow Up</h2>
           <div className="signup-subtitle">
             <p>Sign up for free</p>
             <p>Begin by creating an account today</p>

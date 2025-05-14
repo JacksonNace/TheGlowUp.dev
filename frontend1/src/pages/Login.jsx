@@ -25,7 +25,6 @@ const Login = () => {
     <section className="login-section">
       <div className="login-container">
         <div className="login-content">
-          <h2>The Glow Up</h2>
           <div className="login-subtitle">
             <p>Welcome back!</p>
             <p>Sign in to continue your journey</p>
