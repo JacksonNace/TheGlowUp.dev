@@ -1,0 +1,7 @@
+{
+  "buildProperties": {
+    "appBuildCommand": "cd frontend1 && npm run build",
+    "outputLocation": "frontend1/dist",
+    "nodeVersion": "20.11.1"
+  }
+} 
