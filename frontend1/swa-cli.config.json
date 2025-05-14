@@ -3,7 +3,7 @@
   "configurations": {
     "frontend1": {
       "appLocation": ".",
-      "outputLocation": "dist",
+      "outputLocation": "build",
       "appBuildCommand": "npm run build",
       "apiLocation": "",
       "apiLanguage": "node",
