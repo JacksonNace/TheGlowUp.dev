@@ -1,5 +1,6 @@
 import React from 'react';
 import './AboutUs.css';
+import { FaYoutube, FaLinkedin, FaGithub, FaInstagram, FaExternalLinkAlt } from 'react-icons/fa';
 
 const AboutUs = () => {
   return (
@@ -19,18 +20,29 @@ const AboutUs = () => {
               <span className="wave">👋</span>
               <h2>I'm Alyssa</h2>
             </div>
+            <div className="member-image">
+              <img src="/alyssa.png" alt="Alyssa To" />
+            </div>
             <div className="member-content">
               <p>
-                I'm a UX designer studying at the University of Texas at Dallas, where I focus on 
-                creating meaningful experiences through research, strategy, and visual design. I've 
+                I'm a UX designer from the University of Texas at Dallas, where I focused on user experience and visual design. I've 
                 interned at bp, worked on healthcare apps with ArtSciLab, and helped organize 
                 HackUTD, the largest student-led hackathon in Texas.
               </p>
               <p>
-                I also run a YouTube channel with over 200,000 subscribers, where I share my art, 
-                design tips, and creative projects. I love solving problems that matter and making 
-                things both beautiful and functional.
+      I’m a designer and artist who loves making playful and purposeful products. 
               </p>
+              <div className="social-links">
+                <a href="https://www.linkedin.com/in/alyssaxto/" target="_blank" rel="noopener noreferrer">
+                  <FaLinkedin />
+                </a>
+                <a href="https://github.com/alyssaxto" target="_blank" rel="noopener noreferrer">
+                  <FaGithub />
+                </a>
+                <a href="https://alyssaxto.com" target="_blank" rel="noopener noreferrer" className="personal-link">
+                  <FaExternalLinkAlt />
+                </a>
+              </div>
             </div>
           </div>
 
@@ -39,9 +51,12 @@ const AboutUs = () => {
               <span className="wave">👋</span>
               <h2>I'm Jackson</h2>
             </div>
+            <div className="member-image">
+              <img src="/jackson.png" alt="Jackson Nace" />
+            </div>
             <div className="member-content">
               <p>
-                I'm a computer science student at the University of Houston with a passion for 
+                I study CS + Math at theUniversity of Houston with a passion for 
                 development, education, and technology that helps people. I've taught coding to 
                 hundreds of students, worked in IT, and built full-stack projects that integrate 
                 AI and modern cloud technologies.
@@ -50,6 +65,17 @@ const AboutUs = () => {
                 I enjoy tackling complex problems, learning new tools, and building things that 
                 actually work in the real world.
               </p>
+              <div className="social-links">
+                <a href="https://www.linkedin.com/in/jacksonnace/" target="_blank" rel="noopener noreferrer">
+                  <FaLinkedin />
+                </a>
+                <a href="https://github.com/JacksonNace" target="_blank" rel="noopener noreferrer">
+                  <FaGithub />
+                </a>
+                <a href="https://jacksonnace.netlify.app" target="_blank" rel="noopener noreferrer" className="personal-link">
+                  <FaExternalLinkAlt />
+                </a>
+              </div>
             </div>
           </div>
         </div>

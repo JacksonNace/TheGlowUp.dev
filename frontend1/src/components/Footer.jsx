@@ -15,6 +15,7 @@ const Footer = () => {
           </div>
 
           <div className="quick-links">
+            <h3 className="quick-links-title">Quick Links</h3>
             <div className="quick-links-grid">
               <a href="/">Home</a>
               <a href="/courses">Courses</a>
@@ -42,28 +43,32 @@ const Footer = () => {
         <div className="footer-bottom">
           <div className="social-links">
             <div className="social-link-group">
-              <span>Alyssa</span>
-              <a href="https://linkedin.com/in/alyssa-to" target="_blank" rel="noopener noreferrer">
-                <FaLinkedin />
-              </a>
-              <a href="https://github.com/alyssa-to" target="_blank" rel="noopener noreferrer">
-                <FaGithub />
-              </a>
-              <a href="https://alyssaxto.com" target="_blank" rel="noopener noreferrer" className="personal-link">
-                <FaExternalLinkAlt />
-              </a>
+              <div className="name">Alyssa</div>
+              <div className="social-icons">
+                <a href="https://www.linkedin.com/in/alyssaxto/" target="_blank" rel="noopener noreferrer">
+                  <FaLinkedin />
+                </a>
+                <a href="https://github.com/alyssaxto" target="_blank" rel="noopener noreferrer">
+                  <FaGithub />
+                </a>
+                <a href="https://alyssaxto.com" target="_blank" rel="noopener noreferrer" className="personal-link">
+                  <FaExternalLinkAlt />
+                </a>
+              </div>
             </div>
             <div className="social-link-group">
-              <span>Jackson</span>
-              <a href="https://linkedin.com/in/jackson-nace" target="_blank" rel="noopener noreferrer">
-                <FaLinkedin />
-              </a>
-              <a href="https://github.com/jackson-nace" target="_blank" rel="noopener noreferrer">
-                <FaGithub />
-              </a>
-              <a href="https://jacksonnace.netlify.app" target="_blank" rel="noopener noreferrer" className="personal-link">
-                <FaExternalLinkAlt />
-              </a>
+              <div className="name">Jackson</div>
+              <div className="social-icons">
+                <a href="https://www.linkedin.com/in/jacksonnace/" target="_blank" rel="noopener noreferrer">
+                  <FaLinkedin />
+                </a>
+                <a href="https://github.com/JacksonNace" target="_blank" rel="noopener noreferrer">
+                  <FaGithub />
+                </a>
+                <a href="https://jacksonnace.netlify.app" target="_blank" rel="noopener noreferrer" className="personal-link">
+                  <FaExternalLinkAlt />
+                </a>
+              </div>
             </div>
           </div>
 

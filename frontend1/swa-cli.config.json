@@ -1,0 +1,14 @@
+{
+  "$schema": "https://aka.ms/azure/static-web-apps-cli/schema",
+  "configurations": {
+    "frontend1": {
+      "appLocation": ".",
+      "outputLocation": "build",
+      "appBuildCommand": "npm run build",
+      "apiLocation": "",
+      "apiLanguage": "node",
+      "apiVersion": "20.11.1",
+      "appDevserverUrl": "http://localhost:5173"
+    }
+  }
+} 

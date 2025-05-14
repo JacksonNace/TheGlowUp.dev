@@ -1,8 +1,21 @@
-
-
 .home {
   width:100%;
+  background-color: #9989EB;
+  padding-bottom: 6rem;
 }
+
+.home > * {
+  margin: 4rem 0;
+}
+
+.home > *:first-child {
+  margin-top: 0;
+}
+
+.home > *:last-child {
+  margin-bottom: 0;
+}
+
 .learning-paths {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

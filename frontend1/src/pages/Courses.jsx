@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Courses.css';
 
 const Courses = () => {
@@ -44,7 +45,7 @@ const Courses = () => {
   return (
     <section className="courses-section">
       <div className="courses-container">
-        <h1 className="courses-title">Your Learning Journey</h1>
+        <h1 className="courses-title">Our Courses</h1>
         <div className="courses-grid">
           {courses.map((course) => (
             <div key={course.id} className="course-card">
@@ -69,9 +70,9 @@ const Courses = () => {
                   ></div>
                 </div>
               </div>
-              <button className="continue-btn">
-                {course.progress === 0 ? 'Start Course' : 'Continue Learning'}
-              </button>
+              <Link to="/blog" className="continue-learning-btn">
+                Continue Learning
+              </Link>
             </div>
           ))}
         </div>
