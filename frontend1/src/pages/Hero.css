@@ -4,7 +4,7 @@
   position: relative;
   height: 100vh; /* Ensures the hero section takes up the full viewport height */
   width: 100%; /* Ensures the hero section spans the full width */
-  background: url('./herobg.png') no-repeat center center/cover;
+  background: url('/herobg.png') no-repeat center center/cover;
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* Keeps the content at the top */
