@@ -51,12 +51,6 @@ jobs:
           npm install
           npm run build
         working-directory: ${{ env.AZURE_APP_PATH }}
-        
-      - name: Install and Build Frontend
-        run: |
-          npm install
-          npm run build
-        working-directory: ${{ env.AZURE_APP_PATH }}
 
       - name: Debug Build Directory
         run: ls -R ${{ env.AZURE_APP_PATH }}/build
