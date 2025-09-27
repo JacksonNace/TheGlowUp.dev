@@ -1,0 +1,55 @@
+# Workflow for building and deploying the React frontend to Azure App Service.
+name: Frontend CI/CD to Azure
+
+# Trigger the workflow on pushes to the 'main' branch, but only if changes are in the 'frontend' directory.
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'frontend/**'
+
+# Define environment variables to make the workflow easier to read and maintain.
+env:
+  AZURE_APP_NAME: 'app-glowupdev4prod-frontend'
+  AZURE_APP_PATH: 'frontend'
+
+# Define a single job that will handle both building and deploying.
+jobs:
+  build-and-deploy:
+    # Use your self-hosted runner. The labels match the ones you set up in Phase 1.
+    runs-on: self-hosted, ubuntu, azure-deploy
+    environment: production
+    permissions:
+      id-token: write # This is required for OIDC authentication.
+      contents: read # This is required to checkout the repository code.
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 'Login to Azure via OIDC'
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.x' # Ensure this matches your Node.js version.
+          cache: 'npm'
+          cache-dependency-path: '${{ env.AZURE_APP_PATH }}/package-lock.json'
+
+      - name: Install and Build Frontend
+        run: |
+          npm install
+          npm run build
+        working-directory: ${{ env.AZURE_APP_PATH }}
+        
+      - name: 'Deploy to Azure App Service'
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: ${{ env.AZURE_APP_NAME }}
+          package: '${{ env.AZURE_APP_PATH }}/build'
