@@ -27,6 +27,10 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        
+      - name: Install Azure CLI #install azure CLI on compatible runners
+        run: |
+          curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
       - name: 'Login to Azure via OIDC'
         uses: azure/login@v2
