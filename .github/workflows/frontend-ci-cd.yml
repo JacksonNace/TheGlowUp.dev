@@ -27,7 +27,7 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-        
+
       - name: Install Azure CLI #install azure CLI on compatible runners
         run: |
           curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
@@ -52,6 +52,14 @@ jobs:
           npm run build
         working-directory: ${{ env.AZURE_APP_PATH }}
         
+      - name: Install and Build Frontend
+        run: |
+          npm install
+          npm run build
+        working-directory: ${{ env.AZURE_APP_PATH }}
+
+      - name: Debug Build Directory
+        run: ls -R ${{ env.AZURE_APP_PATH }}/build
       - name: 'Deploy to Azure App Service'
         uses: azure/webapps-deploy@v2
         with:
