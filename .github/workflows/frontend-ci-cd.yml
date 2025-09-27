@@ -18,7 +18,7 @@ env:
 jobs:
   build-and-deploy:
     # Use your self-hosted runner. The labels match the ones you set up in Phase 1.
-    runs-on: self-hosted, glowup
+    runs-on: [self-hosted, glowup, ubuntu]
     environment: production
     permissions:
       id-token: write # This is required for OIDC authentication.
