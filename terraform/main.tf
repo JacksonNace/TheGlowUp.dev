@@ -38,7 +38,7 @@ resource "azurerm_linux_web_app" "backend_app" {
 
   site_config {
     application_stack {
-      python_version = "3.10"
+      node_version = "20-lts"
     }
   }
 

@@ -57,6 +57,8 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+.env
+backend/.env
 # Node.js
 /node_modules
 /dist
@@ -73,6 +75,8 @@ lerna-debug.log*
 .Python
 pip-log.txt
 pip-delete-this-directory.txt
+
+credential.json
 
 # Terraform
 .terraform/
