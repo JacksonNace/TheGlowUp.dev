@@ -1,61 +1,49 @@
-# Workflow for building and deploying the React frontend to Azure App Service.
-name: Frontend CI/CD to Azure
+name: Azure Frontend Deploy
 
-# Trigger the workflow on pushes to the 'main' branch, but only if changes are in the 'frontend' directory.
 on:
   push:
-    branches:
-      - main
-    paths:
-      - 'frontend/**'
+    branches: [ main ]
+  workflow_dispatch: # Allows you to run this manually for testing
 
-# Define environment variables to make the workflow easier to read and maintain.
-env:
-  AZURE_APP_NAME: 'app-glowupdev4prod-frontend'
-  AZURE_APP_PATH: 'frontend'
+permissions:
+  id-token: write # Required for OIDC
+  contents: read  # Required to checkout code
 
-# Define a single job that will handle both building and deploying.
 jobs:
   build-and-deploy:
-    # Use your self-hosted runner. The labels match the ones you set up in Phase 1.
-    runs-on: [self-hosted, ubuntu, azure-deploy]
-    environment: production
-    permissions:
-      id-token: write # This is required for OIDC authentication.
-      contents: read # This is required to checkout the repository code.
-
+    runs-on: ubuntu-latest # This uses GitHub's hosted runner
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Install Azure CLI #install azure CLI on compatible runners
-        run: |
-          curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-
-      - name: 'Login to Azure via OIDC'
+      - name: Login to Azure
         uses: azure/login@v2
         with:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-      - name: Set up Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18.x' # Ensure this matches your Node.js version.
+          node-version: '18'
           cache: 'npm'
-          cache-dependency-path: '${{ env.AZURE_APP_PATH }}/package-lock.json'
+          cache-dependency-path: 'frontend/package-lock.json'
 
-      - name: Install and Build Frontend
+      - name: Build Frontend
         run: |
           npm install
           npm run build
-        working-directory: ${{ env.AZURE_APP_PATH }}
+        working-directory: frontend
 
-      - name: Debug Build Directory
-        run: ls -R ${{ env.AZURE_APP_PATH }}/build
-      - name: 'Deploy to Azure App Service'
-        uses: azure/webapps-deploy@v2
+      - name: Debug - List Files
+        run: |
+          echo "Current Path: $(pwd)"
+          echo "Files in frontend/ folder:"
+          ls -R frontend/dist || echo "frontend/dist NOT FOUND"
+          ls -R dist || echo "Root dist NOT FOUND"
+
+      - name: Deploy to Azure App Service
+        uses: azure/webapps-deploy@v3
         with:
-          app-name: ${{ env.AZURE_APP_NAME }}
-          package: '${{ env.AZURE_APP_PATH }}/build'
+          app-name: 'app-glowupdev4prod-frontend'
+          package: 'frontend/dist'

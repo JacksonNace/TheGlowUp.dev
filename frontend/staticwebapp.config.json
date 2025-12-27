@@ -1,7 +1,0 @@
-{
-  "buildProperties": {
-    "appBuildCommand": "npm run build",
-    "outputLocation": "dist",
-    "nodeVersion": "20.11.1"
-  }
-} 
